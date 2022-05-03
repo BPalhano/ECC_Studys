@@ -55,7 +55,7 @@ string Hamming(string x){
     palavra[i] = int(x[i]) - 48;
   }
 
-  int pot[5] = {1,2,4,8,16};
+  int pot[5] = {0,1,3,7,15};
   
   int pot2[5] = 
 
@@ -66,6 +66,7 @@ string Hamming(string x){
   palavra[11] ^ palavra[12] ^ palavra[13] ^ palavra[14] ^ palavra[15]};
   
   int count = 0;
+  
   for(i = 0; i < 21; i++){
 
     if (exist_this_element(pot, i, 5)){
@@ -83,15 +84,9 @@ string Hamming(string x){
 
   for( i =0; i < 5;i++){
     
-    cout <<"pot2"<< i <<endl << pot2[i] << endl;
+    cout <<"pot2 "<< i <<endl << pot2[i] << endl;
 
   }
-
-  for(i = 0; i < 16; i++){
-  
-  cout << "palavra: "<< i << endl << palavra[i] << "x" << x[i] << endl;
-}
-
   
   return hamming;
 }
