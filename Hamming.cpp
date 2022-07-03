@@ -48,19 +48,4 @@ string Hamming(string x){
 
   return hamming;
 }
-
-int main (void){
-
-  // ler um inteiro de 16 bits.
-  int read;
-  cin >> read;
-  
-  string x = bitset<16>(read).to_string();
-  string H = Hamming(x);
-
-  cout << "código com redundância:" << H << " num de char: " << H.size() << endl << "código original: " << x << " num de char: " << x.size();
-
-
-  return 0;
-}
-
+// Aqui preciso generalizar o building do vetor "palavra" e do "bitcheck".

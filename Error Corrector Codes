@@ -1,0 +1,47 @@
+Anotações teóricas
+
+-> Reed - Solomon:
+
+os sistemas de TV digital utilizam o par codificador convolucional e decodificador Viterbi 
+formando uma forte estrutura para transmissão com ambientes sujeitos à inserção de erros, 
+que é o caso do território de grandes cidades brasileiras, nesse capítulo será exposto como 
+se dá o processo desses códigos com exemplos numéricos.
+(Código Linear) (Cíclico) (Bom para muitos erros)
+
+
+RS(n, k) -> Reed - Solomon com n bits e k símbolos.
+
+Campo de Galois:
+
+ - Um campo de Galois consiste em elementos, baseados no elmento primitivo, usualmente denotado por
+alpha normalmente de valor igual a dois, com os seguintes valores:
+
+	0, (alpha)^1 , (alpha)^2, ... , (alpha) ^(N-1)
+
+Para formamrmos um conjunto de 2^m, onde N = 2^m - 1. O campo é conhecido como GF(2^m). Para o 
+exemplo de m = 4, GF(16) podemos representar cada elemento na forma polinomial a seguir:
+
+	a_{3}x^3 + a_{2}x^2 + a_{1}x^1 + a_{0}.   			// N aponta para n° de termos do polinômio.
+
+
+com a_{3}, a_{2}, a_{1} e a_{0} correspondendo aos números binários de 0000 a 1111 (de 0 a 15).
+Aritmética em campos finitos tem os processos de adição, subtração, multiplcação e divisão diferentes
+daquele que estamos acostumados com números inteiros. O efeito dessa diferença é que qualquer combinação
+aritmética de elementos de campos finitos irá sempre produzir outro elemento de campo finito.
+
+as somas polinomiais obdecem a relação lógica XOR (1 + 1 = 0 = 0 + 0)
+
+Polinômio primitivo: p(x), tal que gr(p) = m, irredutível. Para GF(16):
+	
+	p(x) x^{4} + x + 1
+
+Outra opção de polinômio é:
+	
+	p(x) = x^{4} + x^{3} + 1
+
+Todos os elementos diferentes de zero podem ser obtidos utilizando-se do fato do elemento primitivado
+alpha ser raiz do poliômio gerador de campo, ou seja, (p(alpha) = 0), para o nosso exemplo de GF(16),
+substituindo temos:
+
+	alpha^{4} + alpha + 1 = 0 ou alpha^{4} = a + 1
+
