@@ -33,15 +33,17 @@ for parity in range(0, (len(h))):
         ch += 1
 
 parity_list.reverse()
-error = sum(int(parity_list)*(2 ** i) for i, parity_list in enumerate(parity_list[::-1]))
+
+error = sum(int(parity_list)*(2 ** i) for i,
+            parity_list in enumerate(parity_list[::-1]))
 
 if error == 0:
     print('There is no error in Hamming code')
     for i in range(len(d)):
         if not (i in pot2):
             num += d[i]
-
-    itg = int(num,2)
+        
+    itg = int(num, 2)
 
     print('the number you inserted before decode is: ', itg)
 
